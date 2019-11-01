@@ -29,12 +29,14 @@ const Login = props => {
   };
 
   return (
-    <View style={Styles.centeredVertical}>
-      <Text style={Fonts.h2}>Sign In</Text>
-      <AppForm
-        inputs={LoginInputs}
-        onSubmit={credentials => handleAthentication(credentials)}
-      />
+    <View style={Styles.content}>
+      <View style={Styles.centeredVertical}>
+        <Text style={Fonts.h2}>Sign In</Text>
+        <AppForm
+          inputs={LoginInputs}
+          onSubmit={credentials => handleAthentication(credentials)}
+        />
+      </View>
     </View>
   );
 };

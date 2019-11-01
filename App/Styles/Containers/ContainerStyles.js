@@ -4,9 +4,12 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
-  content: {
-    padding: 40,
+  contentContainer: {
     flex: 1,
+  },
+  content: {
+    flex: 1,
+    padding: 40,
   },
   scrollContent: {
     flex: 1,
