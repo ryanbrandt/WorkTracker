@@ -5,7 +5,7 @@ import Styles from '../../Styles/Containers/ContainerStyles';
 
 const StatusBarContainer = () => {
   return (
-    <View style={Styles.statusBar}>
+    <View style={Styles.statusBarContainer}>
       <StatusBar barStyle="light-content" hidden={false} translucent={true} />
     </View>
   );

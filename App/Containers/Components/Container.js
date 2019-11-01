@@ -1,17 +1,17 @@
 import React from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import StatusBarContainer from '../SubComponents/StatusBarContainer';
 import Content from './Content';
 
-const Container = () => {
+import Styles from '../../Styles/Containers/ContainerStyles';
+
+const Container = props => {
   return (
     <>
       <StatusBarContainer />
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <SafeAreaView style={Styles.container}>
+        <ScrollView contentContainerStyle={Styles.scrollContent}>
           <Content />
         </ScrollView>
       </SafeAreaView>
@@ -19,10 +19,4 @@ const Container = () => {
   );
 };
 
-const TabNavigator = createBottomTabNavigator({
-  Home: Container,
-  Profile: Container,
-  Settings: Container,
-});
-
-export default createAppContainer(TabNavigator);
+export default Container;

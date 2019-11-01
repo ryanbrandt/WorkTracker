@@ -1,14 +1,36 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {connect} from 'react-redux';
+import {View} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+
+import {getAuthenticatedStatus} from '../../Auth/selectors';
+import Login from '../../Auth/Components/Login';
 
 import Styles from '../../Styles/Containers/ContainerStyles';
 
 const Content = () => {
   return (
     <View style={Styles.content}>
-      <Text>Content here?</Text>
+      <Login />
     </View>
   );
 };
 
-export default Content;
+const mapStateToProps = state => {
+  return {
+    authenticated: getAuthenticatedStatus(state),
+  };
+};
+
+const connectedContent = connect(
+  mapStateToProps,
+  null,
+)(Content);
+
+const TabNavigator = createBottomTabNavigator({
+  'Sign In': connectedContent,
+  'Sign Up': connectedContent,
+});
+
+export default createAppContainer(TabNavigator);

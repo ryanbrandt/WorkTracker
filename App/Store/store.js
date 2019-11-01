@@ -1,9 +1,15 @@
 import {createStore, applyMiddleware, compose} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
+import rootSaga from './sagas';
 import rootReducer from './reducer';
 
-const initialState = {};
+const initialState = {
+  auth: {
+    authenticated: false,
+    errors: null,
+  },
+};
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -17,5 +23,7 @@ const store = createStore(
     composeEnhancers(),
   ),
 );
+
+sagaMiddleware.run(rootSaga);
 
 export default store;
