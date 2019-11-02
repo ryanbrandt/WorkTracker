@@ -17,4 +17,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  anchor: {
+    color: 'blue',
+  },
 });

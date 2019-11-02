@@ -12,6 +12,11 @@ import Fonts from '../../Styles/Themes/Fonts';
 const Register = props => {
   const RegisterInputs = [
     {
+      name: 'phone',
+      placeholder: 'Enter a recovery phone number',
+      required: true,
+    },
+    {
       name: 'username',
       placeholder: 'Enter a username',
       required: true,

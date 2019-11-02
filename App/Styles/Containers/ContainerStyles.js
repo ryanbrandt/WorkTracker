@@ -1,10 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import Colors from '../Themes/Colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
+    height: Dimensions.get('screen').height,
+    width: Dimensions.get('screen').width,
   },
   contentContainer: {
     flex: 1,

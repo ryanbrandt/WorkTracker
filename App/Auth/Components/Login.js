@@ -7,6 +7,7 @@ import {requestAuthorization} from '../actions';
 import AppForm from '../../Common/Components/AppForm';
 
 import Styles from '../../Styles/Containers/ContainerStyles';
+import ElementStyles from '../../Styles/Themes/Elements';
 import Fonts from '../../Styles/Themes/Fonts';
 
 const Login = props => {
@@ -32,6 +33,7 @@ const Login = props => {
     <View style={Styles.content}>
       <View style={Styles.centeredVertical}>
         <Text style={Fonts.h2}>Sign In</Text>
+        <Text style={ElementStyles.anchor}>Forgot your credentials?</Text>
         <AppForm
           inputs={LoginInputs}
           onSubmit={credentials => handleAthentication(credentials)}
