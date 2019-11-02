@@ -1,3 +1,10 @@
 export const REQUEST_AUTHORIZATION = 'auth/REQUEST';
 export const AUTHORIZATION_SUCCESS = 'auth/SUCCESS';
 export const AUTHORIZATION_ERROR = 'auth/ERROR';
+
+export const REQUEST_REGISTRATION = 'auth/REQUEST_REGISTER';
+export const REGISTRATION_SUCCESS = 'auth/REGISTRATION_SUCCESS';
+export const REGISTRATION_ERROR = 'auth/REGISTRATION_ERROR';
+
+export const VALIDATE_JWT = 'auth/VALIDATE';
+export const REFRESH_JWT = 'auth/REFRESH';

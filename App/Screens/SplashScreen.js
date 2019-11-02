@@ -2,13 +2,13 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {RFPercentage} from 'react-native-responsive-fontsize';
 
+import Colors from '../Styles/Themes/Colors';
+
 const SplashScreen = () => {
   return (
     <View style={Styles.container}>
       <Text style={Styles.mainText}>Work Tracker</Text>
-      <Text style={Styles.subText}>
-        Encouraging health conscious productivity
-      </Text>
+      <Text style={Styles.subText}>Health Conscious Productivity</Text>
     </View>
   );
 };
@@ -18,7 +18,7 @@ const Styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'gray',
+    backgroundColor: Colors.grayAccent,
   },
   mainText: {
     color: 'white',

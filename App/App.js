@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 
-import store from './Store/store';
+import store, {persistor} from './Store/store';
 import Container from './Containers/Components/Container';
 import SplashScreen from './Screens/SplashScreen';
 
@@ -22,7 +23,9 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        {showSplash ? <SplashScreen /> : <Container />}
+        <PersistGate loading={null} persistor={persistor}>
+          {showSplash ? <SplashScreen /> : <Container />}
+        </PersistGate>
       </Provider>
     );
   }

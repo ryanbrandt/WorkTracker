@@ -2,6 +2,7 @@ import * as a from './actionTypes';
 
 const initialState = {
   authenticated: false,
+  token: null,
   errors: null,
 };
 
@@ -23,6 +24,24 @@ export default function(state = initialState, action) {
       return {
         ...state,
         error,
+      };
+    }
+
+    case a.REGISTRATION_ERROR: {
+      const {error} = action;
+
+      return {
+        ...state,
+        registrationErrors: error,
+      };
+    }
+
+    case a.REFRESH_JWT: {
+      const {token} = action;
+
+      return {
+        ...state,
+        token,
       };
     }
 

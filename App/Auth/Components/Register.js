@@ -2,39 +2,45 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
-import {requestAuthorization} from '../actions';
+import {requestRegistation} from '../actions';
 
 import AppForm from '../../Common/Components/AppForm';
 
 import Styles from '../../Styles/Containers/ContainerStyles';
 import Fonts from '../../Styles/Themes/Fonts';
 
-const Login = props => {
-  const LoginInputs = [
+const Register = props => {
+  const RegisterInputs = [
     {
       name: 'username',
-      placeholder: 'Enter your username',
+      placeholder: 'Enter a username',
       required: true,
     },
     {
       name: 'password',
-      placeholder: 'Enter your password',
+      placeholder: 'Enter a password',
+      required: true,
+    },
+    {
+      name: 'passwordConfirmed',
+      placeholder: 'Confirm password',
       required: true,
     },
   ];
 
-  const handleAthentication = credentials => {
-    const {authenticate} = props;
-    authenticate(credentials);
+  const handleRegistration = credentials => {
+    const {register} = props;
+
+    register(credentials);
   };
 
   return (
     <View style={Styles.content}>
       <View style={Styles.centeredVertical}>
-        <Text style={Fonts.h2}>Sign In</Text>
+        <Text style={Fonts.h2}>Sign Up</Text>
         <AppForm
-          inputs={LoginInputs}
-          onSubmit={credentials => handleAthentication(credentials)}
+          inputs={RegisterInputs}
+          onSubmit={credentials => handleRegistration(credentials)}
         />
       </View>
     </View>
@@ -43,11 +49,11 @@ const Login = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    authenticate: credentials => dispatch(requestAuthorization(credentials)),
+    register: credentials => dispatch(requestRegistation(credentials)),
   };
 };
 
 export default connect(
   null,
   mapDispatchToProps,
-)(Login);
+)(Register);

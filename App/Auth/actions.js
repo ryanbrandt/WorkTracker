@@ -13,8 +13,42 @@ export const authorizationSuccess = () => {
   };
 };
 
-export const authorizationError = () => {
+export const authorizationError = error => {
   return {
     type: a.AUTHORIZATION_ERROR,
+    error,
+  };
+};
+
+export const requestRegistation = credentials => {
+  return {
+    type: a.REQUEST_REGISTRATION,
+    credentials,
+  };
+};
+
+export const registrationSuccess = () => {
+  return {
+    type: a.REGISTRATION_SUCCESS,
+  };
+};
+
+export const registrationError = error => {
+  return {
+    type: a.REGISTRATION_ERROR,
+    error,
+  };
+};
+
+export const validateJWT = () => {
+  return {
+    type: a.VALIDATE_JWT,
+  };
+};
+
+export const refreshJWT = jwt => {
+  return {
+    type: a.REFRESH_JWT,
+    jwt,
   };
 };
